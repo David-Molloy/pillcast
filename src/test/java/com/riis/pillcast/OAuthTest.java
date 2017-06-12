@@ -1,6 +1,10 @@
 package com.riis.pillcast;
 
 import static com.jayway.restassured.RestAssured.given;
+import static com.riis.pillcast.Constants.ACCESS_TOKEN;
+import static com.riis.pillcast.Constants.CONSUMER_KEY;
+import static com.riis.pillcast.Constants.CONSUMER_SECRET;
+import static com.riis.pillcast.Constants.SECRET_TOKEN;
 import static org.hamcrest.Matchers.equalTo;
 
 import org.junit.Before;
@@ -11,13 +15,10 @@ import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.response.Response;
 
 public class OAuthTest {
-	private static final String CONSUMER_KEY = "9W7ZyZ5Kngx6gGQDlQUeGsoIF";
-	private static final String CONSUMER_SECRET = "y9gBf8BcpodStEYTSBsH1XT2RwKZnZMUDN3353oz3HxKpKY3hT";
-	private static final String ACCESS_TOKEN = "865248402086514689-Oyhj4gD3Nw3mW4Qo0KqKwSp67JroxWu";
-	private static final String SECRET_TOKEN = "vvNAcbn70cM5YDrEOHrcdFV6ZzQByQwsUHHSMtAbRa216";
-	private static final String BODY = "{\"device\": \"Lakshmi's iPhone\",\"password\": \"qwert\",\"scope\": \"openid offline_access\",\"grant_type\": \"password\",\"username\": \"sam@patient.com\",\"client_id\": \"1PumcQ7cfMWBllkI4IMb2VCKx7XQozOy\",\"connection\": \"Username-Password-Authentication\"}";
-	private static Response response = null;
-	private static String ID_TOKEN = null;
+	
+	public static Response response = null;
+	public static String ID_TOKEN = null;
+	public static final String BODY = "{\"device\": \"Lakshmi's iPhone\",\"password\": \"qwert\",\"scope\": \"openid offline_access\",\"grant_type\": \"password\",\"username\": \"sam@patient.com\",\"client_id\": \"1PumcQ7cfMWBllkI4IMb2VCKx7XQozOy\",\"connection\": \"Username-Password-Authentication\"}";
 
 	@Before
 	public void setUp() {
