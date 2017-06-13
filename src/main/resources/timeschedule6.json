@@ -1,0 +1,9 @@
+{
+	"query": "mutation(  $device_uuid: String!, $timezone: String!,  $device_token: String!,  $buffer_mins:Int!, $bedtimeLabel: String!,$bedtimeDow: Dows!,$bedtimeHr: Hours !, $bedtimeMin: Mins!) {upsert_schedule(timezone: $timezone,device_token: $device_token, device_uuid: $device_uuid, buffer_mins:$buffer_mins, entries: [{label: $bedtimeLabel,dow: $bedtimeDow, hr: $bedtimeHr, min: $bedtimeMin},] ){ id } }",
+	"variables": {
+		"bedtimeLabel": "bedtime",
+		"bedtimeDow": "_",
+		"bedtimeHr": "h21",
+		"bedtimeMin": "m0"
+	}
+}

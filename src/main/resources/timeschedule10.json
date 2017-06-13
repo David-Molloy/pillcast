@@ -1,0 +1,21 @@
+{
+	"query": "mutation(  $device_uuid: String!, $timezone: String!,  $device_token: String!,  $buffer_mins:Int!, $morningLabel: String!,$morningDow: Dows!,$morningHr: Hours !, $morningMin: Mins!) {upsert_schedule(timezone: $timezone,device_token: $device_token, device_uuid: $device_uuid, buffer_mins:$buffer_mins, entries: [{label: $morningLabel,dow: $morningDow, hr: $morningHr, min: $morningMin},] ){ id } }",
+	"variables": {
+		"timezone": "Eastern Standard Time",
+		"device_uuid": "_",
+		"device_token": "android:c99a1da11d3c1e1b",
+		"buffer_mins": 60,
+		"morningLabel": "morning",
+		"morningDow": "_",
+		"morningHr": "h6",
+		"morningMin": "m08",
+		"middayLabel": "midday",
+		"middayDow": "_",
+		"middayHr": "h14",
+		"middayMin": "m09",
+		"eveningLabel": "evening",
+		"eveningDow": "_",
+		"eveningHr": "h16",
+		"eveningMin": "m30"
+	}
+}

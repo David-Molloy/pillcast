@@ -7,8 +7,19 @@
 		"buffer_mins": 60,
 		"morningLabel": "morning",
 		"morningDow": "_",
-		"morningHr": "h13",
-		"morningMin": "m0"
+		"morningHr": "h9",
+		"morningMin": "m0",
+		"middayLabel": "midday",
+		"middayDow": "_",
+		"middayHr": "h15",
+		"middayMin": "m0",
+		"eveningLabel": "evening",
+		"eveningDow": "_",
+		"eveningHr": "h18",
+		"eveningMin": "m0",
+		"bedtimeLabel": "bedtime",
+		"bedtimeDow": "_",
+		"bedtimeHr": "h22",
+		"bedtimeMin": "m0"
 	}
 }
-
