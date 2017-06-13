@@ -16,8 +16,8 @@ import com.jayway.restassured.response.Header;
 import com.jayway.restassured.response.Response;
 
 public class PillCastLoginTest {
-	public Response response;
-	public static String token;
+	private Response response;
+	private String token;
 
 	@Before
 	public void setUp() throws Exception {
@@ -25,9 +25,10 @@ public class PillCastLoginTest {
 		System.out.println(token);
 		String body = IOUtils.toString(new FileInputStream(new File("src/main/resources/Login.json")), StandardCharsets.UTF_8);
 		Header header = new Header("Authorization", "Bearer " + token);
-		response = given().contentType("application/json").header(header).body(body).accept("application/json").when().post("https://pillcast-alpha-api.herokuapp.com/p/GQL");
-		//System.out.println(response.getBody().toString());
-		System.out.println("gql reponse"+ response.asString());
+		response = given().contentType("application/json").header(header).body(body).accept("application/json").when()
+				.post("https://pillcast-alpha-api.herokuapp.com/p/GQL");
+		// System.out.println(response.getBody().toString());
+		//System.out.println("gql reponse" + response.asString());
 
 	}
 

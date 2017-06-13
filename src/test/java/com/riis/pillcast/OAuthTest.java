@@ -7,6 +7,7 @@ import static com.riis.pillcast.Constants.CONSUMER_SECRET;
 import static com.riis.pillcast.Constants.SECRET_TOKEN;
 import static org.hamcrest.Matchers.equalTo;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,7 +18,6 @@ import com.jayway.restassured.response.Response;
 public class OAuthTest {
 	
 	public static Response response = null;
-	public static String ID_TOKEN = null;
 	public static final String BODY = "{\"device\": \"Lakshmi's iPhone\",\"password\": \"qwert\",\"scope\": \"openid offline_access\",\"grant_type\": \"password\",\"username\": \"sam@patient.com\",\"client_id\": \"1PumcQ7cfMWBllkI4IMb2VCKx7XQozOy\",\"connection\": \"Username-Password-Authentication\"}";
 
 	@Before
@@ -40,8 +40,8 @@ public class OAuthTest {
 	@Test
 	public void testOAuthSetIDToken() {
 		JsonPath responseBody = response.getBody().jsonPath();
-		ID_TOKEN = responseBody.get("id_token");
-		System.out.println(ID_TOKEN);
+		System.out.println(responseBody.get("id_token").toString());
+		response.then().body("id_token", Matchers.notNullValue());
 	}
 
 }
